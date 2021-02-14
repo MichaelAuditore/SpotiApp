@@ -1,0 +1,13 @@
+.table {
+  color: white;
+}
+
+.play-song {
+  justify-content: flex-start !important;
+  top: 0 !important;
+  visibility: visible !important;
+}
+
+.play-song button {
+  outline: none;
+}

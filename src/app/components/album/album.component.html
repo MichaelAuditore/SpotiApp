@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+<app-loader *ngIf="loading"></app-loader>
+<main class="container spotify-music" *ngIf="!loading">
+    <div class="row animated fadeIn">
+        <div class="col-2">
+            <img [src]="album.images | noimage" class="img-thumbnail img-circle">
+        </div>
+        <div class="col">
+            <h3>{{album.name}}</h3>
+            <p>
+                <a [href]="album.external_urls.spotify" target="_blank">
+                    Ir al Album
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <th>Imagen</th>
+                    <th>Album</th>
+                    <th>Cancion</th>
+                    <th>Vista Previa</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let track of tracks">
+                        <td><img [src]="album.images | noimage" class="img-thumb"></td>
+                        <td>{{ album.name }}</td>
+                        <td>{{ track.name }}</td>
+                        <td>
+                            <div class="play-song">
+                                <button (click)="playSong(track.preview_url)" style="--size:40px; z-index: 2;"
+                                    class="play-button" aria-label=" Reproducir" data-testid="play-button"
+                                    title="Reproducir" clic>
+                                    <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
+                                        <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor">
+                                        </polygon>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

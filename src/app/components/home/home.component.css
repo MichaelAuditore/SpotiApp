@@ -1,0 +1,15 @@
+main h2 {
+  margin: 0;
+}
+
+:host {
+  width: 100%;
+}
+
+.spotify-music {
+  background-color: #1b1b1b;
+  height: calc(100vh - 160px);
+  padding: 1rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}

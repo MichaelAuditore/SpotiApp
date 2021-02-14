@@ -1,0 +1,16 @@
+<app-nav></app-nav>
+
+<app-loader *ngIf="loading"></app-loader>
+
+<main class="container spotify-music">
+    <h2 *ngIf="newAlbums.length > 0">Albums</h2>
+    <div class="albums">
+        <app-cards [items]="newAlbums"></app-cards>
+    </div>
+    <h2 *ngIf="newSingles.length > 0">Singles</h2>
+    <div class="singles">
+        <div class="card-columns">
+            <app-cards [items]="newSingles"></app-cards>
+        </div>
+    </div>
+</main>

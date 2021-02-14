@@ -1,0 +1,5 @@
+<footer class="now-playing-container" data-testid="now-playing">
+    <div class="song-playing">
+        <audio *ngIf="url.includes('scdn')" [src]="url | safeurl" controls autoplay></audio>
+    </div>
+</footer>
