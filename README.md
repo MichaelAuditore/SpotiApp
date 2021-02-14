@@ -1,12 +1,12 @@
 # Spotify API token
 
-    Always before to run the application you must change the TOKEN provided in file
+Always before to run the application you must change the TOKEN provided in file [spotify.service.ts](src/app/services/spotify.service.ts)
 
-[spotify.service.ts](src/app/services/spotify.service.ts)
+
 
 # Why token doesn't automatically generated?
 
-    It's because only servers are able to do requests to get Spotify OAuth Toke
+It's because only servers are able to do requests to get Spotify OAuth Toke
 
 # Spody
 
