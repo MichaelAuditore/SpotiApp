@@ -1,3 +1,13 @@
+# Spotify API token
+
+    Always before to run the application you must change the TOKEN provided in file
+
+[spotify.service.ts](src/app/services/spotify.service.ts)
+
+# Why token doesn't automatically generated?
+
+    It's because only servers are able to do requests to get Spotify OAuth Toke
+
 # Spody
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
