@@ -7,15 +7,20 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class SpotifyService {
-  token: string =
-    'BQAs5GQzG_0szuCNFC3N53sKZVC_KCFF3xZ7FtnpxIDMykbU9tU3JuUxRQh1HJQAR2-HmcePT__1OFVdB7w';
+  token: string = ''
   clientId: string = 'c18703414eac4e1db0e56331be34ce44';
   secretId: string = 'e33d00826e6748e9ad83769d84824363';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
+
+  getToken() {
+    return this.http.get(`https://m-spotimike-token.herokuapp.com/spotify/${this.clientId}/${this.secretId}`)
+  }
 
   getQuery(query: string) {
-    console.log(this.token);
+    if (this.token === '' || !!this.token) {
+      this.getToken()
+    }
     const URL = `https://api.spotify.com/v1/${query}`;
 
     const headers = new HttpHeaders({

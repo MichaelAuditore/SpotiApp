@@ -14,17 +14,20 @@ export class HomeComponent implements OnInit {
   constructor(private spotify: SpotifyService) {
     this.loading = true;
 
-    this.spotify.getNewRelases().subscribe((releases: any) => {
-      releases.forEach((item: any) => {
-        if (item.album_type === 'album') {
-          this.newAlbums.push(item);
-        } else {
-          this.newSingles.push(item);
-        }
+    this.spotify.getToken().subscribe((data: any) => {
+      this.spotify.token = data.access_token
+      this.spotify.getNewRelases().subscribe((releases: any) => {
+        releases.forEach((item: any) => {
+          if (item.album_type === 'album') {
+            this.newAlbums.push(item);
+          } else {
+            this.newSingles.push(item);
+          }
+        });
+        this.loading = false;
       });
-      this.loading = false;
-    });
+    })
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spody"
+    }
+  },
+  "defaultProject": "spody",
+  "cli": {
+    "analytics": "79e5ec3b-663f-426a-88d2-ac9d895bfd60"
+  }
 }

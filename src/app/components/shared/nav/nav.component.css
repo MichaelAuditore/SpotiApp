@@ -28,11 +28,13 @@ header {
 .register-button {
   background-color: transparent;
   color: #fff;
+  text-decoration: none;
 }
 
 .login-button {
   background-color: #fff;
   color: #181818;
+  text-decoration: none;
 }
 
 .register-button:hover,
